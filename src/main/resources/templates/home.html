@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Give India Challenge</title>
+    <resource th:fragment="include">
+        <link rel="stylesheet"
+              type="text/css"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              th:href=" @{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}"/>
+        <script type="text/javascript"
+                src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"
+                th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+        <script type="text/javascript"
+                src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+
+        <script type="text/javascript"
+                th:src="@{/webjars/popper.js/1.14.3/umd/popper.min.js}"></script>
+
+    </resource>
+
+</head>
+<body>
+<div class="min-vh-100 min-vw-100 d-flex flex-column justify-content-center align-items-center">
+    <form th:action="@{/create-report}" action="/create-report" method="post" class="text-center"
+          enctype="multipart/form-data">
+        <h3 class="mb-5">Upload csv file and choose currency to generate report</h3>
+        <div class="form-group">
+            <select class="form-control" name="curr">
+                <option th:each="curr : ${currencies}" th:value="${curr}" th:text="${curr}">
+                </option>
+                <option value="" selected>Select your currency</option>
+                <option value="USD"> USD</option>
+                <option value="MYR"> MYR</option>
+                <option value="KRW"> KRW</option>
+                <option value="GBP"> GBP</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <!--            <label class="col-form-label" for="csv-file">Upload CSV file</label>-->
+            <input class="form-control-file" type="file" id="csv-file" name="csv-file"/>
+        </div>
+        <button class="btn btn-sm btn-outline-primary mt-4" type="submit">Generate Report</button>
+    </form>
+</div>
+
+</body>
+</html>
