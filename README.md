@@ -16,3 +16,25 @@ Create a disbursement report from a list of donations in CSV.
 - Include instructions on how to set it up and run in the README.md
 - Add your resume and other profile / project links
 - Submit a pull request (PR)
+
+
+### Necessary Tools 
+- Apache maven (build tool for java)
+- $ sudo apt install maven (install maven in ubuntu)
+- Java should be installed (java 11 openjdk)
+
+
+### Steps
+- clone the project $ git clone <directory-url> to local directory
+- go to the directory > backend-developer-challenge
+- run command $ mvn install
+- run command $ mvn package
+- go to directory > target
+- run command $ java -jar backend-challenge-0.0.1-SNAPSHOT.jar
+- open browser and type in url "localhost:8082"
+
+### Other details
+- Resume - https://drive.google.com/file/d/1PSUcnm79ZzQCzK0ysChEHd4bsJUvmEWa/view?usp=sharing
+- Project links - http://api.hajaam.in ,
+ https://app.youngengine.com
+- Github project links - https://github.com/icon-gaurav/LibraryManagement.git , https://github.com/icon-gaurav/Parko.git
