@@ -1,0 +1,19 @@
+extends layout
+
+block content
+
+
+    div(class='d-flex flex-column justify-content-center align-items-center')
+        h1= title
+        form(action='/report', method='post' class='text-center' enctype='multipart/form-data')
+            h3.mb-5 Upload csv file and choose currency to generate report
+            div.form-group
+                select(class='form-control' name="curr")
+                    each val in ["CAD", "HKD", "ISK", "PHP", "DKK", "HUF", "CZK", "AUD", "RON","SEK", "IDR", "INR", "BRL", "RUB", "HRK", "JPY", "THB", "CHF", "SGD", "PLN", "BGN", "TRY","CNY", "NOK", "NZD", "ZAR", "USD", "MXN", "ILS", "GBP", "KRW", "MYR"]
+                        option(value=val)=val
+
+            div.form-group
+                input(class='form-control-file' type='file' name='csv_file')
+
+
+            button(class='btn btn-sm btn-outline-primary mt-4' type='submit') Generate Report

@@ -22,16 +22,25 @@ Create a disbursement report from a list of donations in CSV.
 - Apache maven (build tool for java)
 - $ sudo apt install maven (install maven in ubuntu)
 - Java should be installed (java 11 openjdk)
+- npm and node should be installed
 
 
 ### Steps
 - clone the project $ git clone <directory-url> to local directory
 - go to the directory > backend-developer-challenge
+
+- For Java Solution
 - run command $ mvn install
 - run command $ mvn package
 - go to directory > target
 - run command $ java -jar backend-challenge-0.0.1-SNAPSHOT.jar
 - open browser and type in url "localhost:8082"
+
+- For Nodejs Solution
+- go to directory > giveindia
+- run command $ npm install
+- run command $ npm start
+- open browser and type in url "localhost:3000"
 
 ### Other details
 - Resume - https://drive.google.com/file/d/1PSUcnm79ZzQCzK0ysChEHd4bsJUvmEWa/view?usp=sharing

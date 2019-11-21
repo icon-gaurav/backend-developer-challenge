@@ -1,0 +1,15 @@
+extends layout
+
+block content
+
+    div(class=' d-flex flex-column justify-content-center align-items-center')
+        if error
+            h3 Error occurred during parsing the CSV file
+
+        else
+            div
+                h3.alert.alert-success Your report has been generated
+                p You can download your report from
+                    a(href=`${report}report.csv` target="_blank")  here
+                p To know discarded entries due to some error like rate for currency exchange not known, empty entries etc.
+                    a(href=`${report}discardreport.csv` target="_blank")  Click here
